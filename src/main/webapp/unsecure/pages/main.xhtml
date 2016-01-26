@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/data/templates/common/common-template.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h3>esto es la pagina main el head</h3>
+	</h:head>
+
+
+	<ui:define name="contenido">
+		<h5>la pagina main se muestra correctamente</h5>
+
+		<p:growl id="msgs" showDetail="true" />
+
+		<p:dataTable id="gasolineraDT" var="gasolinera"
+			value="#{gasolinerasBean.consultarTodasLasGasolineras()}"
+			editable="true" widgetVar="tablaGasolineras">
+
+
+			<f:facet name="header">
+				<p:outputPanel>
+					<h:outputText value="Search all fields:" />
+					<p:inputText id="globalFilter"
+						onkeyup="PF('tablaGasolineras').filter()" style="width:100px"
+						placeholder="Enter keyword" />
+				</p:outputPanel>
+			</f:facet>
+
+
+			<p:column headerText="Clave" filterBy="#{gasolinera.clave}"
+				filterMatchMode="contains" style="font-size:12px;"
+				filterStyle="width:90%">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{gasolinera.clave}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="clave" value="#{gasolinera.clave}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			<p:column headerText="Clave" filterBy="#{gasolinera.latitud}"
+				filterMatchMode="contains" style="font-size:12px;"
+				filterStyle="width:90%">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{gasolinera.latitud}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="latitud" value="#{gasolinera.latitud}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+						<p:column headerText="Clave" filterBy="#{gasolinera.longitudWGS8429}"
+				filterMatchMode="contains" style="font-size:12px;"
+				filterStyle="width:90%">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{gasolinera.longitudWGS8429}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="longitud" value="#{gasolinera.longitudWGS8429}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+		</p:dataTable>
+
+	</ui:define>
+
+	<ui:define name="footer">
+		el footer del main
+	</ui:define>
+
+</ui:composition>

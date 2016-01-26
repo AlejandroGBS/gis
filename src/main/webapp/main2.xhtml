@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/data/templates/common/common-template.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h3>esto es la pagina main el head</h3>
+	</h:head>
+
+
+	<ui:define name="contenido">
+		<h5>la pagina main se muestra correctamente</h5>
+
+		<h:dataTable id="gasolineraDt" var="gasolinera"
+			value="#{gasolinerasBean.consultarTodasLasGasolineras()}">
+			<h:column id="clave">
+				<h:outputText value="#{gasolinera.clave}" />
+			</h:column>
+
+
+		</h:dataTable>
+
+	</ui:define>
+
+	<ui:define name="footer">
+		el footer del main
+	</ui:define>
+
+</ui:composition>
+
+
+
+
+

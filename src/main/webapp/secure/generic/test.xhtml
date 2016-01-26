@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/data/templates/common/common-template.xhtml">
+
+	<ui:define name="scripts">
+		<script type="text/javascript">
+        var map, layer;
+        function init(){
+        	 // construct a map with the above options
+            map = new OpenLayers.Map('map');
+            var wms = new OpenLayers.Layer.WMS(
+                    "TOPP States",
+                    "http://localhost:8080/geoserver/wms?",
+                    {
+                       layers: 'topp:states',
+                       styles: '',
+                       srs: 'EPSG:4326',
+                       format: 'image/png',
+                       tiled: 'true',
+                       tilesOrigin : "143.60260815000004,-43.851764249999995",
+                       transparent: true
+                    },
+                    {
+                        'opacity': 0.75, 'isBaseLayer': false, 'wrapDateLine': true
+                    }
+                );
+
+         // add the created layers to the map
+            // (if you want custom layers to show up they must be here as well)
+            map.addLayer(layer);
+            map.zoomToMaxExtent();
+
+            
+            alert("hola");
+        }
+
+
+        </script>
+	</ui:define>
+		<ui:param name="onLoadJS" value="init()" />
+
+	<ui:define name="titulo">titulo pagina test</ui:define>
+	<ui:define name="contenido">
+		<h:outputScript target="head">
+    		function kaka() {
+        console.log('CONNECTED to websockets!');
+        output = document.getElementById('output');
+        testWebSocket();
+    }
+    		</h:outputScript>
+
+		<h:outputScript name="js/ol/ol.js" target="head" />
+		<h:outputStylesheet name="js/ol/ol.css" />
+		<div id="map"></div>
+		<p>In creating your own OpenLayers application, you can use the
+			bounds shown above as your initial extent. For example, the following
+			code would zoom your map to the current extent:</p>
+		<pre id="bounds"></pre>
+	</ui:define>
+
+</ui:composition>

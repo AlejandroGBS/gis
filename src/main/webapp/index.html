@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="resources/js/ol/ol.js"></script>
+<script type="text/javascript" >
+var layers = [
+              new ol.layer.Tile({
+                source: new ol.source.MapQuest({layer: 'sat'})
+              }),
+              new ol.layer.Image({
+                extent: [-13884991, 2870341, -7455066, 6338219],
+                source: new ol.source.ImageWMS({
+                  url: 'http://demo.boundlessgeo.com/geoserver/wms',
+                  params: {'LAYERS': 'topp:states'},
+                  serverType: 'geoserver'
+                })
+              })
+            ];
+            var map = new ol.Map({
+              layers: layers,
+              target: 'map',
+              view: new ol.View({
+                center: [-10997148, 4569099],
+                zoom: 4
+              })
+            });
+
+        </script>
+</head>
+<body onload="init()">
+	<div id="map"></div>
+	<p>In creating your own OpenLayers application, you can use the
+		bounds shown above as your initial extent. For example, the following
+		code would zoom your map to the current extent:</p>
+	<pre id="bounds"></pre>
+	<a href="./test/test.htm">ir al tet jsp</a>
+	<a href="./unsecure/pages/main.xhtml">ir al tet main.xhtml</a>
+</body>
+</html>

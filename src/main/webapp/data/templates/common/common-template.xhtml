@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+<title><ui:insert name="titulo">titulo com-temp</ui:insert></title>
+<ui:insert name="scripts"></ui:insert>
+</h:head>
+
+	<h:body onload="#{onLoadJS}">
+
+		<div id="heading">
+			<ui:insert name="heading">
+				<ui:include src="/data/templates/common/common-header.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="content">
+			<br />
+			<ui:insert name="contenido">
+      	   	   Aqui va el contenido com-temp
+      	</ui:insert>
+			<br />
+		</div>
+		<div id="footer">
+			<br />
+			<ui:insert name="footer">
+				<ui:include src="/data/templates/common/common-footer.xhtml" />
+			</ui:insert>
+			<br />
+		</div>
+
+	</h:body>
+
+</f:view>
