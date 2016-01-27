@@ -79,8 +79,7 @@ public class GasolineraDaoJpa implements GasolineraDaoItf {
 		return null;
 	}
 	
-
-	@Override
+	
 	public Gasolinera buscarGasolineraPorClave(String clave) {
 		try{
 			return entityManager.find(Gasolinera.class, clave);
@@ -90,6 +89,7 @@ public class GasolineraDaoJpa implements GasolineraDaoItf {
 		}
 		return null;
 	}
+
 	
 	//getters and setters
 	public EntityManager getEntityManager() {
@@ -99,7 +99,6 @@ public class GasolineraDaoJpa implements GasolineraDaoItf {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 
 
 

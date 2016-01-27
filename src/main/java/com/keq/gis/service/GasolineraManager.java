@@ -58,7 +58,7 @@ public class GasolineraManager implements GasolineraManagerIfz {
 		return gasolineraDaoItf.cargarTodasGasolinerasDB();
 	}	
 
-	@Override
+
 	public Gasolinera buscarGasolineraPorClave(String clave) {
 		return gasolineraDaoItf.buscarGasolineraPorClave(clave);
 	}
