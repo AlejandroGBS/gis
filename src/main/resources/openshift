@@ -1,0 +1,18 @@
+prueba
+---------------------------------
+
+WildFly 9 administrator added.  Please make note of these credentials:
+
+   Username: adminhQ5dvkI
+   Password: 5vthT-yajP4Y
+   
+   run 'rhc port-forward prueba' to access the web admin area on port 9990.
+
+
+PostgreSQL 9.2 database added.  Please make note of these credentials:
+
+   Root User: admin4ynxsyl
+   Root Password: rxcMa4aqvbxE
+   Database Name: prueba
+
+Connection URL: postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT
