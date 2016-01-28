@@ -46,9 +46,9 @@ public class GasolineraDaoJpa implements GasolineraDaoItf {
 			for (ListaEESSPrecio listaEESSPrecio : listadoGasolineras) {
 				listaEESSPrecio.setFecha(date);
 				entityManager.persist(listaEESSPrecio);
-				entityManager.flush();
+				
 			}
-
+			entityManager.flush();
 			
 		} catch (ParseException parseEx) {
 			System.out.print("problema al convertir la fecha" + parseEx);
