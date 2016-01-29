@@ -33,6 +33,18 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		p:dataSource-ref="dataSource" p:jpaVendorAdapter-ref="hibernateJpaVendorAdapter"
 		p:packagesToScan="com.keq.gis.model" >
+		    <property name="jpaPropertyMap">
+        <map>
+            <entry key="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+            <entry key="hibernate.cache.use_second_level_cache" value="true"/>
+            <entry key="hibernate.cache.use_query_cache" value="true"/>
+            <entry key="javax.persistence.sharedCache.mode" value="ENABLE_SELECTIVE" />
+        </map>
+    </property>
+	</bean>
+	
+	<bean id="jpaPropertyMapRef">
+	
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"

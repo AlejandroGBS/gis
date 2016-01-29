@@ -3,6 +3,8 @@ package com.keq.gis.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Cacheable;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.keq.gis.model.Gasolinera;
@@ -10,6 +12,7 @@ import com.keq.gis.service.GasolineraManagerIfz;
 
 //@ManagedBean
 //@ViewScoped
+@Cacheable
 public class GasolinerasBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
