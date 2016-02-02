@@ -9,14 +9,21 @@
 	<batch:job id="preciosGasolineras">
 		<batch:step id="persistirDatos">
 			<batch:tasklet>
-				<batch:chunk reader="priceGasReader" writer="priceGasWriter"
+				<batch:chunk reader="priceGasReader" writer="jpaBatchWriter"
 					commit-interval="1"></batch:chunk>
 			</batch:tasklet>
 		</batch:step>
 	</batch:job>
 
-	<bean id="priceGasReader" class="org.springframework.batch.item.file.FlatFileItemReader"></bean>
+	<bean id="priceGasReader" class="com.keq.gis.model.Eess">
+
+	</bean>
 
 	<bean id="priceGasWriter" class="org.springframework.batch.item.database.support.PostgresPagingQueryProvider"></bean>
+	
+	<bean id="jpaBatchWriter" class = "org.springframework.batch.item.database.JpaItemWriter">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+	
 
 </beans>

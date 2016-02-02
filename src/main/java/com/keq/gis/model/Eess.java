@@ -9,6 +9,11 @@ import java.util.Map;
 import javax.annotation.Generated;
 import javax.persistence.Transient;
 
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.NonTransientResourceException;
+import org.springframework.batch.item.ParseException;
+import org.springframework.batch.item.UnexpectedInputException;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "ListaEESSPrecio",
     "Nota"
 })
-public class Eess {
+public class Eess implements ItemReader<ListaEESSPrecio> {
 
     @JsonProperty("Fecha")
     private String Fecha;
@@ -104,5 +109,15 @@ public class Eess {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
+
+	public com.keq.gis.model.ListaEESSPrecio read()
+			throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+		
+		for (ListaEESSPrecio EESSPrecio : ListaEESSPrecio) {
+			return EESSPrecio;
+		}
+		
+		return null;
+	}
 
 }
