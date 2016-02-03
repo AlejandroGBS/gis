@@ -9,6 +9,8 @@
 
 
 	<import resource="quartz-context.xml"/>
+	
+	<import resource="batch-jobs.xml"/>
 
 
 	<!-- enabling annotation driven configuration / -->
