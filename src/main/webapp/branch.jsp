@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>pagina creada en un branch</title>
+<title>page created</title>
 </head>
 <body>
 <h3>amazing if it works, this is created in the bug branch to apply a correction</h3>
