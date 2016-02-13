@@ -7,6 +7,6 @@
 <title>pagina creada en un branch</title>
 </head>
 <body>
-<h3>amazing if it works</h3>
+<h3>amazing if it works, this is created in the bug branch to apply a correction</h3>
 </body>
 </html>
